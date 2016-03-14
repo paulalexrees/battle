@@ -1,4 +1,13 @@
 <div style="border: 3px dashed red">
   <h1>My name is <%= @name %></h1>
-  <img src="http://bit.ly/1eze8aE" />
+  <img src="https://s-media-cache-ak0.pinimg.com/736x/f9/43/e8/f943e86d98e3ecc60b6f60e624103291.jpg" />
 </div>
+
+<% unless @name %>
+  <form action="/named-chicken">
+    <input type="text" name="name" />
+    <input type="submit" value="Submit" />
+  </form>
+<% end %>
+
+<!--http://bit.ly/1eze8aE -->
