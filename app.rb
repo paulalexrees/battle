@@ -1,23 +1,16 @@
-require "sinatra"
-require "shotgun"
+require 'sinatra/base'
 
-get '/' do
-  "Hello World"
+class Battle < Sinatra::Base
+
+  get '/' do
+    erb(:index)
+  end
+
+  post '/names' do
+    @player_1_name = params[:player_1_name]
+    @player_2_name = params[:player_2_name]
+    erb(:play)
+  end
+  # start the server if ruby file executed directly
+  run! if app_file == $0
 end
-
-get '/random-cat' do
-  @name = ["Amigo", "Oscar", "Junyuan"].sample
-  erb(:index)
-end
-
-get '/named-chicken' do
-  p params
-  @name = params[:name]
-  erb(:index)
-end
-
-# post '/named-cat' do
-#   p params
-#   @name = params[:name]
-#   erb(:index)
-# end
