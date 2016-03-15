@@ -8,6 +8,7 @@ feature "Attack" do
   scenario "hit points reduced after attack" do
     sign_in_and_play
     click_link('Attack')
+    click_link('OK!')
     expect(page).to have_text "Mittens: 10HP"
   end
 end

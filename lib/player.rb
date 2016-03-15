@@ -6,7 +6,11 @@ attr_reader :name, :hp
     @hp = 20
   end
 
-  def attacked
+  def attack(player)
+    player.receive_damage
+  end
+
+  def receive_damage
     @hp -= 10
     @hp = 0 if @hp < 0
   end
