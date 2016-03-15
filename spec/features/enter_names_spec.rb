@@ -1,5 +1,3 @@
-require "./app"
-
 feature "Enter names" do
   scenario "submitting a name" do
     visit "/"
